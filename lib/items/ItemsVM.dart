@@ -11,6 +11,14 @@ class ItemsVM extends ChangeNotifier {
         .add(ItemModel("Thor Dhal Thor Dhal Thor Dhal Thor Dhal Thor Dhal", 0));
     allItems.add(ItemModel("Surf Excel Bar Rs 35", 0));
     allItems.add(ItemModel("Urid Dhal", 0));
+    allItems
+        .add(ItemModel("Thor Dhal Thor Dhal Thor Dhal Thor Dhal Thor Dhal", 0));
+    allItems.add(ItemModel("Surf Excel Bar Rs 35", 0));
+    allItems.add(ItemModel("Urid Dhal", 0));
+    allItems
+        .add(ItemModel("Thor Dhal Thor Dhal Thor Dhal Thor Dhal Thor Dhal", 0));
+    allItems.add(ItemModel("Surf Excel Bar Rs 35", 0));
+    allItems.add(ItemModel("Urid Dhal", 0));
     notifyListeners();
   }
 

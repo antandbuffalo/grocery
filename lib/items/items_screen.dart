@@ -23,19 +23,25 @@ class _Items extends State<Items> {
     for (int i = 0; i < viewModel.allItems.length; i++) {
       items.add(
         ListTile(
+          contentPadding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+          shape:
+              const Border(bottom: BorderSide(color: Colors.black26, width: 1)),
           title: Text(viewModel.allItems[i].title),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
                 onPressed: () => viewModel.remove(i),
-                icon: const Icon(Icons.remove_circle),
-                tooltip: 'add',
+                icon: const Icon(
+                  Icons.remove_circle,
+                  color: Colors.red,
+                ),
+                tooltip: 'remove',
               ),
               Text(viewModel.allItems[i].count.toString()),
               IconButton(
                 onPressed: () => viewModel.add(i),
-                icon: const Icon(Icons.add_circle),
+                icon: const Icon(Icons.add_circle, color: Colors.green,),
                 tooltip: 'add',
               ),
             ],
