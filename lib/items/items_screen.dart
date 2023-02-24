@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery/items/Item.dart';
+import 'package:grocery/items/ItemModel.dart';
 import 'package:provider/provider.dart';
 
 import 'ItemsVM.dart';
@@ -41,7 +41,10 @@ class _Items extends State<Items> {
               Text(viewModel.allItems[i].count.toString()),
               IconButton(
                 onPressed: () => viewModel.add(i),
-                icon: const Icon(Icons.add_circle, color: Colors.green,),
+                icon: const Icon(
+                  Icons.add_circle,
+                  color: Colors.green,
+                ),
                 tooltip: 'add',
               ),
             ],
@@ -59,6 +62,17 @@ class _Items extends State<Items> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: const Text("Select Items"),
+        actions: [
+          Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () => viewModel.share(),
+                child: const Icon(
+                  Icons.share,
+                  size: 26.0,
+                ),
+              )),
+        ],
       ),
       body: ChangeNotifierProvider<ItemsVM>(
         create: (context) => viewModel,
