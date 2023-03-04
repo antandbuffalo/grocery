@@ -13,7 +13,7 @@ class ItemsVM extends ChangeNotifier {
   List<ItemModel> allItems = [];
 
   Future<List<ItemModel>> readJson() async {
-    final String response = await rootBundle.loadString('assets/items.en.json');
+    final String response = await rootBundle.loadString('assets/items.ta.json');
     final data = await json.decode(response);
     final jsonItems = data["items"];
     List<ItemModel> items = [];
