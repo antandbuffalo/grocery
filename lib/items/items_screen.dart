@@ -21,6 +21,9 @@ class _Items extends State<Items> {
   List<Widget> getItemsUI() {
     List<Widget> items = [];
     for (int i = 0; i < viewModel.allItems.length; i++) {
+      if(!viewModel.allItems[i].visible) {
+        continue;
+      }
       items.add(
         ListTile(
           contentPadding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
@@ -61,7 +64,7 @@ class _Items extends State<Items> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: const Text("Select Items"),
+        title: const Text("மணி மாறன் ஸ்டோர்"),
         actions: [
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
@@ -98,6 +101,14 @@ class _Items extends State<Items> {
                 // horizontal).
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  TextField(
+                    decoration: const InputDecoration(
+                      labelText: 'தேடு',
+                      suffixIcon: Icon(Icons.search),
+                      contentPadding: EdgeInsets.all(10.0)
+                    ),
+                    onChanged: (text) => viewModel.filterItems(text),
+                  ),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(

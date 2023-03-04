@@ -2,8 +2,13 @@ class ItemModel {
   String title;
   int count;
   int id;
+  bool visible;
 
-  ItemModel({required this.title, this.count = 0, required this.id});
+  ItemModel(
+      {required this.title,
+      this.count = 0,
+      required this.id,
+      this.visible = true});
 
   factory ItemModel.fromJson(Map<String, dynamic> json) {
     int _count = json["count"] ?? 0;
